@@ -1,0 +1,334 @@
+// 初始化样式
+@spacing: 0.18rem;//元素之间的核心间距
+@theme-color:#cc0000;//项目主题颜色
+body{
+    font:400 14px/1.5 Arial //初始化字体
+}
+* {
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;//在iOS操作系统的手机中滑动更流畅
+}
+body,button,form,html,input,label,textarea{
+    margin: 0;
+    padding: 0;
+}
+// 设置input被填充时的样式
+// 谷歌浏览器会自动添加一个input:-webkit-autofill的class
+input:-webkit-autofill{
+    -webkit-box-shadow:0 0 0 1000px #f5f5f9 inset;
+    box-shadow: 0 0 0 1000px #f5f5f9 inset;
+}
+// placeholder字体颜色设置
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color: #999;
+}
+// 谷歌浏览器中去掉滚动条
+::-webkit-scrollbar{
+    display: none;
+}
+
+// 样式命名规则为“cm-属性-属性值”，如cm-ptb-02，cm代表common
+// ptb代表padding-top和padding-bottom，02表示0.2rem
+
+
+// 外边距
+// 设置各个标准的margin-top
+.cm-mt-009{
+    margin-top: @spacing/2;
+}
+.cm-mt-018{
+    margin-top: @spacing;
+}
+.cm-mt-036{
+    margin-top: @spacing*2;
+}
+.cm-mt-080{
+    margin-top: 0.8rem;
+}
+// 设置margin-left
+.cm-ml-018{
+    margin-left: @spacing;
+}
+// 设置margin-right
+.cm-mg-018{
+    margin-right: @spacing;
+}
+.cm-mg-009{
+    margin-right: @spacing/2;
+}
+// 同时设置顶部和底部外边距
+.cm-mtb-009{
+    margin-top:@spacing/2;
+    margin-bottom:@spacing/2;
+ }
+ .cm-mtb-018{
+    margin:@spacing 0;
+ }
+ // 同时设置左右外边距
+ .cm-mlr-018{
+    margin-left:@spacing;
+    margin-right:@spacing;
+ }
+//  设置外边距
+ .cm-m-018{
+    margin:@spacing;
+ }
+
+ //内边距
+//  设置padding-top
+.cm-pt-018{
+    padding-top:@spacing;
+ }
+ //  同时设置top的底部
+ .cm-ptb-018{
+    padding:@spacing 0;
+ }
+ .cm-ptb-009{
+    padding-top:@spacing/2;
+    padding-bottom:@spacing/2;
+ }
+  //  同时设置left和right
+ .cm-plr-009{
+    padding-left:@spacing/2;
+    padding-right:@spacing/2;
+ }.cm-plr-018{
+    padding:0 @spacing;
+ }
+//  设置padding
+ .cm-p-009{
+    padding:@spacing/2;
+ }
+ .cm-p-018{
+    padding:@spacing;
+ }
+//  布局设置
+.cm-flex{
+    display:flex;
+ }
+ .cm-flex-column{
+    display:flex;
+//    从上往下排列
+    flex-direction:column;
+ }
+
+//  flex是flex-grow、flex-shrink、flex-basis的的缩写，各个默认为 0 1 auto
+// 当 flex 取值为 none，则计算值为 0 0 auto
+// 当 flex 取值为 auto，则计算值为 1 1 auto
+// 当 flex 取值为一个非负数字，则该数字为 flex-grow 值，flex-shrink 取 1，flex-basis 取 0%
+// 当 flex 取值为一个长度或百分比，则视为 flex-basis 值，flex-grow 取 1，flex-shrink 取 1
+// 当 flex 取值为两个非负数字，则分别视为 flex-grow 和 flex-shrink 的值，flex-basis 取 0%
+// 当 flex 取值为一个非负数字和一个长度或百分比，则分别视为 flex-grow 和 flex-basis 的值，flex-shrink 取 1
+.cm-flex-1{
+    flex:1;
+ }
+ .cm-flex-wrap{
+    // flex-wrap属性定义，若一条轴线排不下，如何换行
+    flex-wrap:wrap;
+ }
+//  定义主轴上的对齐方式
+ .cm-jc-c{
+    //  居中对齐
+    justify-content:center;
+ }
+ .cm-jc-sa{
+    // 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+    justify-content:space-around;
+ }
+ .cm-jc-sb{
+    // 两端对齐，项目之间的间隔都相等
+    justify-content:space-between;
+ }
+ .cm-jc-fe{
+    //  右对齐
+    justify-content:flex-end;
+ }
+//  定义交叉轴上的对齐方式
+ .cm-ai-c{
+    // 交叉轴的中点对齐
+    align-items:center;
+ }
+ .cm-as-fe{
+    // 交叉轴的终点对齐
+    align-self:flex-end;
+ }
+ .cm-as-fs{
+    // 交叉轴的起点对齐
+    align-self:flex-start;
+ }
+//  设置宽度100%
+ .cm-w-full{
+    width:100%;
+ }
+//  设置文本对齐方式
+ .cm-tx-l{
+    //  文本左对齐
+    text-align:left;
+ }
+ .cm-tx-c{
+    //  文本右对齐
+    text-align:center;
+  }
+//   字体颜色和背景色设置
+.cm-c-main{
+    color:@theme-color;
+ }
+ .cm-c-white{
+    color:#fff;
+ }
+ .cm-c-333{
+    color:#333;
+ }
+ .cm-c-666{
+    color:#666;
+ }
+ .cm-c-999{
+    color:#999;
+ }
+ .cm-bc-main{
+    background:@theme-color;
+}
+.cm-bc-white{
+    background:#fff;
+}
+.cm-bc-333{
+    background:#333;
+}
+.cm-bc-666{
+    background:#666;
+}
+.cm-bc-999{
+    background:#999;
+ }
+ .cm-bc-ddd{
+    background:#ddd;
+ }
+//  字体大小
+.cm-fs-020{
+    font-size:0.20rem;
+ }
+ .cm-fs-022{
+    font-size:0.22rem;
+ }
+ .cm-fs-024{
+    font-size:0.24rem;
+ }
+ .cm-fs-026{
+    font-size:0.26rem;
+ }
+ .cm-fs-028{
+    font-size:0.28rem;
+ }
+ .cm-fs-030{
+    font-size:0.30rem;
+ }
+ .cm-fw-bold{
+    font-weight:bold;
+ }
+ .cm-fs-height{
+    line-height:0.4rem;
+ }
+//  图片尺寸设置
+.cm-img-04{
+    width:0.4rem;
+    height:0.4rem;
+ }
+ .cm-img-05{
+    width:0.5rem;
+    height:0.5rem;
+ }
+ .cm-img-06{
+    width:0.6rem;
+    height:0.6rem;
+ }
+ .cm-img-08{
+    width:0.8rem;
+    height:0.8rem;
+ }
+ .cm-img-10{
+    width:1rem;
+    height:1rem;
+ }
+ .cm-img-12{
+    width:1.2rem;
+    height:1.2rem;
+ }
+ .cm-img-14{
+    width:1.4rem;
+    height:1.4rem;
+ }
+ .cm-img-16{
+    width:1.6rem;
+    height:1.6rem;
+ }
+ .cm-img-banner{
+    width:100%;
+    height:4rem;
+ }
+ //边框样式
+.cm-border-ddd {
+    border:1px solid #ddd;
+  }
+  .cm-border-bottom-ddd {
+    border-bottom:1px solid #ddd;
+  }
+  .cm-border-top-eee {
+    border-top:1px solid #eee;
+  }
+  .cm-border-bottom-eee {
+    border-bottom:1px solid #eee;
+  }
+  //圆角样式
+.cm-border-radius-10{
+    border-radius:0.1rem;
+ }
+ .cm-border-radius-half{
+    border-radius:50%;
+ }
+ .cm-space-line{
+    height:0.18rem;
+    background:#eee;
+ }
+ //按钮样式
+.cm-btn-main{
+    background:@theme-color;
+    padding:0.05rem 0.2rem;
+    color:#fff;
+    border-radius:0.1rem;
+ }
+ .cm-btn-main-higher{
+    background:@theme-color;
+    padding:0.05rem 0.2rem;
+    color:#fff;
+    border-radius:0.1rem;
+ }
+ .cm-btn-border-333{
+    padding:0.05rem 0.2rem;
+    border:1px solid #333;
+    color:#333;
+    border-radius:0.1rem;
+ }
+ .cm-btn-border-main{
+    border:1px solid @theme-color;
+    padding:0.05rem 0.2rem;
+    color:@theme-color;
+    border-radius:0.1rem;
+ }
+ .cm-btn-border-999{
+    border:1px solid #999;
+    padding:0.05rem 0.2rem;
+    color:#999;
+    border-radius:0.1rem;
+ }
+ //底部悬浮定位
+.cm-bottom-position{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:999;
+    width:100%;
+    display:flex;
+    align-items:center;
+    background:#fff;
+    padding:0.18rem;
+ }
